@@ -65,6 +65,15 @@ app.get('/about', (req, res) => {
   });
 });
 
+
+app.get('/projects', (req, res) => {
+  //params: viewengine template name. data json
+  res.render('projects.hbs', {
+    pageTitle: 'Project Page',
+    projectMessage: 'Portfolio Page Here'
+  });
+});
+
 //Challenge
 //create a route /bad -send back json with errorMessage
 app.get('/bad', (req,res)=> {
