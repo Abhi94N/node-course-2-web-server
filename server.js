@@ -1,6 +1,9 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+const port = process.env.PORT || 3000;//stores all env variable in key value pairs and use of or for defailt
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');//
@@ -70,8 +73,8 @@ app.get('/bad', (req,res)=> {
   })
 });
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');//printed in node cmd
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);//printed in node cmd
 
 }); //bind the application to a port for the http handler to run
 //now will allow to see website locally using localhost:3000
